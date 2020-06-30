@@ -1,4 +1,27 @@
 <%= form_for @person do |f| %>
   <%= f.text_field :name %> <br /><br />
+    <%= f.fields_for :adresses do |addr|%>
+
+      <%= addr.label :street_address_1 %>
+      <%=addr.text_fiels :street_address_1 %>
+
+      <%= addr.label :street_address_2 %>
+      <%=addr.text_fiels :street_address_2 %>
+
+      <%= addr.label :city %>
+      <%=addr.text_fiels :city %>
+
+      <%= addr.label :state %>
+      <%=addr.text_fiels :state %>
+
+      <%= addr.label :zipcode %>
+      <%=addr.text_fiels :zipcode %>
+
+      <%= addr.label :address_type %>
+      <%=addr.text_fiels :address_type %>
+
+    <%end%>
+
  <%= f.submit %>
+
 <% end %>
